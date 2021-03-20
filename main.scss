@@ -4,14 +4,14 @@
     align-items: $alignItem;
 }
 @mixin dimension{
-    width: 160px;
-    height: 230px;
+   
+    width: 400px;
+    height: 500px;
     margin: 15px;  
-    box-shadow: 0px 0px 20px #efefef;
+    box-shadow: 0 0 20px #efefef;
    
 }
 @mixin largeur{
-    max-width: $bandwidth;
     width: 100%;
 }
 @mixin textType {
@@ -26,12 +26,13 @@ $bandwidth: 450px;
 $green_tea : rgb(87, 156, 135);
 $yellorange :rgb(253, 203, 70);
 body{
-    @include centre;
+    display: flex;
+    flex-direction: column;
     .heading{
         @include centre;
         justify-content: center;
         @include largeur;
-        height: 70px;
+        height: 100px;
         background-color: $green_tea;
         &__title{
            @include textType;
@@ -39,13 +40,111 @@ body{
     }
 }
 .main{
+    &-content{
+        margin-bottom: 50px;
+        @include centre;
+        background-color: $pink;
+        max-width: 670px;
+        width: 100%;
+        &-heading{
+            margin: 20px;
+            @include centre;
+            height: 175px;
+            justify-content: center;
+            > i{
+                font-size: 70px;
+            }
+            &__title{
+                
+                &--note{
+                    font-family: devonshire;
+                    font-size: 35px;
+                }
+                &--chic{
+                    font-family: croissant;
+                    font-size: 35px;
+                    background: linear-gradient(135deg, #e38a12 0%,#8f5aff 100%);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                }
+            }
+        }
+        &-part{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            &__subtitle{
+                &--note{
+                    display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                font-family: sofadi;
+                font-size: 20px;
+                width: 580px;
+                }
+                &--chic{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    font-family: merriBlack;
+                    font-size: 20px;
+                    width: 580px;
+                }
+                
+            }     
+            &__main{
+                display: flex;
+                justify-content: space-between;
+                &--col{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+                &__description{
+                    &--note{
+                        margin : 5px;
+                        font-family: sofadi;
+                    }
+                    
+                }
+                &__price{
+                    &--note{
+                        margin : 5px;
+                        font-family: sofadi;
+                    }
+                   
+                }
+            }  
+        }
+    &__footer{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        align-items: center;
+        > i{
+            font-size: 40px;
+        }
+        &--title{
+            &--note{
+                margin: 0;
+                margin-left: 10px;
+                font-size: 25px;
+                font-family: devonshire;
+            }
+           
+        }
+    }
+    }
     @include largeur;
     @include centre;
+    flex: 1;
     &__container{
         flex-wrap: wrap;
         @include centre(row);  
         justify-content: center;
         padding: 15px;
+        max-width: 1200px;
+        width: 100%;
             &--pink{
             @include dimension();
             @include centre();
@@ -94,7 +193,7 @@ body{
     @include centre(row);
     justify-content: space-between;
     @include largeur;
-    height: 50px;
+    height: 100px;
     &__button{
         width: 200px;
         height: 40px;
@@ -105,9 +204,11 @@ body{
         @include textType;
         background-color: $green_tea;
         border-style: none;
+        font-size: 20px;
         }
     }
 }
+
 
 h2{
     text-align: center;
@@ -116,4 +217,105 @@ a
 {
     outline: none;
   text-decoration: none;
+}
+@font-face {
+    font-family: 'devonshire';
+    src: url('Devonshire-Regular.ttf');
+}
+@font-face {
+    font-family: 'baloo';
+    src: url('BalooTamma2-Regular.ttf');
+}
+@font-face {
+    font-family: 'croissant';
+    src: url('CroissantOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'dancing';
+    src: url('DancingScript-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'kalam';
+    src: url('Kalam-Regular.ttf');
+}
+@font-face {
+    font-family: 'kaushan';
+    src: url('KaushanScript-Regular.ttf');
+}
+@font-face {
+    font-family: 'sofadi';
+    src: url('SofadiOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'merriLight';
+    src: url('Merriweather-Light.ttf');
+}
+@font-face {
+    font-family: 'merriblack';
+    src: url('Merriweather-Black.ttf');
+}
+
+.kaushan{
+    font-family: kaushan;
+    background: linear-gradient(135deg, #3e923a 0%,#beff7f 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.kalam{
+    font-family: kalam;
+}
+.dancing{
+    font-family: dancing;
+    background: linear-gradient(to right, #1139e0 0%,#0889fb 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.devon{
+    font-family: devonshire;
+}
+.baloo{
+    font-family: baloo;
+}
+.croissant{
+    font-family: croissant;
+    background: linear-gradient(135deg, #e38a12 0%,#8f5aff 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.chicmarron{
+    color: rgb(199, 116, 18);
+}
+.chicviolet{
+    color: rgb(165, 103, 153);
+}
+.chicbleu{
+    color: rgb(110, 76, 203);
+}
+.delice{
+    color: rgb(8, 135, 251);
+}
+.palette{
+    color: rgb(114, 191, 86);
+}
+h2{
+    color:rgb(53,53,53);
+    font-size: 32px;
+    margin: 30px;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+h3{
+    margin: 0;
+    color: black;
+    font-size: 60px;
+}
+.fa-music{
+    background: linear-gradient(to right, #f05060 0%,#f6916a 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 60px;
+}
+.marginTop{
+    margin-top: 2px;
 }
